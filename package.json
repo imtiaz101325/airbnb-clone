@@ -49,6 +49,7 @@
     },
     "rules": {
       "import/no-extraneous-dependencies": "off",
+      "no-underscore-dangle": "off",
       "import/extensions": [
         "off",
         "never"
@@ -56,6 +57,20 @@
       "meteor/template-names": [
         2,
         "snake-case"
+      ],
+      "object-shorthand": [
+        "error",
+        "always",
+        {
+          "avoidQuotes": false
+        }
+      ],
+      "meteor/eventmap-params": [
+        "error",
+        {
+          "eventParamName": "event",
+          "templateInstanceParamName": "instance"
+        }
       ]
     },
     "env": {

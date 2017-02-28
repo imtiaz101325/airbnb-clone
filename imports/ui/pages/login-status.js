@@ -15,10 +15,10 @@ Template.Login_status.helpers({
     return '';
   },
   admin() {
-    return Meteor.user().roles['default-group'][0] === 'admin';
+    return Meteor.user().roles && (Meteor.user().roles['default-group'][0] === 'admin');
   },
   secret() {
-    return Meteor.user().roles['default-group'][0] === 'view-secrets';
+    return Meteor.user().roles && (Meteor.user().roles['default-group'][0] === 'view-secrets');
   },
 });
 
