@@ -1,0 +1,7 @@
+//bootswatch variables
+@import '{}/node_modules/bootswatch/journal/variables';
+
+//customized bootstrap import mainly to exclude glypyicons
+@import './bootstrap-custom';
+
+@import '{}/node_modules/bootswatch/journal/bootswatch';

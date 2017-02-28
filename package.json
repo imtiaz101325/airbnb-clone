@@ -2,10 +2,68 @@
   "name": "meteorjs-dev",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent",
+    "test": "meteor test --driver-package practicalmeteor:mocha --port 5000"
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",
+    "bcrypt": "^1.0.2",
+    "bootstrap-sass": "^3.3.7",
+    "bootswatch": "^3.3.7",
     "meteor-node-stubs": "~0.2.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.5",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-import-resolver-meteor": "^0.3.4",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^6.10.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {"browsers": ["last 2 versions"]}
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true,
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb/base",
+      "plugin:meteor/recommended"
+    ],
+    "settings": {
+      "import/resolver": "meteor"
+    },
+    "rules": {
+      "import/no-extraneous-dependencies": "off",
+      "import/extensions": [
+        "off",
+        "never"
+      ],
+      "meteor/template-names": [
+        2,
+        "snake-case"
+      ]
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "meteor": true
+    },
+    "globals": {}
   }
 }
