@@ -4,22 +4,29 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import '../../ui/layouts/app-body';
 
 import '../../ui/pages/app-not-found';
-import '../../ui/pages/login-status';
-import '../../ui/pages/tutorial-page';
+
+import '../../ui/components/search-view';
 
 import '../../ui/accounts/accounts-templates';
 
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
-    BlazeLayout.render('App_body', { main: 'Login_status' });
+    BlazeLayout.render('App_body');
   },
 });
 
-FlowRouter.route('/tutorial', {
-  name: 'Tutorial_page',
+FlowRouter.route('/s', {
+  name: 'App.search',
   action() {
-    BlazeLayout.render('Tutorial_page');
+    BlazeLayout.render('App_body', { main: 'Search_view' });
+  },
+});
+
+FlowRouter.route('/s/:address', {
+  name: 'App.search',
+  action() {
+    BlazeLayout.render('App_body', { main: 'Search_view' });
   },
 });
 

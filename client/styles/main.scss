@@ -4,4 +4,8 @@
 @import './bootstrap-custom';
 @import '{}/node_modules/bootswatch/journal/bootswatch';
 
-@import '../../imports/ui/pages/tutorial-page';
+@import '../../imports/libs/style-helpers';
+
+@import '../../imports/ui/components/map';
+@import '../../imports/ui/components/navigation';
+@import '../../imports/ui/components/search';

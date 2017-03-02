@@ -36,3 +36,6 @@ practicalmeteor:mocha
 accounts-ui
 google-config-ui
 facebook-config-ui
+dburles:google-maps
+practicalmeteor:chai
+kurounin:pagination-blaze

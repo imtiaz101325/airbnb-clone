@@ -1,11 +1,7 @@
 <template name="App_body">
-  <div class="jumbotron">
-    <h1>Airbnb Search clone: Skeleton App</h1>
-    <p>Basic skeleton with routes, accounts and roles</p>
-    <p>
-      App folowing <a href="http://meteor.com/tutorials/blaze">official tutorial</a>
-      <button class="btn btn-success btn-sm js-on-tutoral-redirect">here</button>
-    </p>
+  <div class="app-body">
+    {{> Navigation "" }}
+    {{> Template.dynamic template=main }}
+    {{> Footer "" }}
   </div>
-  {{> Template.dynamic template=main}}
 </template>
