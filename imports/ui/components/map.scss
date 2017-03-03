@@ -4,7 +4,16 @@
   padding: 0;
 
   #load-map {
+    position: absolute;
     height: 100%;
     width: 100%;
+  }
+
+  #search-control {
+    position: relative;
+    background: #fff;
+    left: 3em;
+    top: 1.5em;
+    padding: 1em;
   }
 }

@@ -10,6 +10,8 @@ import './app-body.html';
 import '../components/navigation';
 import '../components/footer';
 
+import mapsObj from '../../libs/maps';
+
 const CONNECTION_ISSUE_TIMEOUT = 5000;
 
 // A store which is local to this file?
@@ -25,5 +27,7 @@ Meteor.startup(() => {
 });
 
 Template.App_body.onCreated(function appBodyOnCreated() {
-  this.state = new ReactiveDict();
+  if (!mapsObj.checkLoaded()) {
+    mapsObj.loadMap();
+  }
 });

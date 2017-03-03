@@ -16,14 +16,15 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/s', {
+FlowRouter.route('/s/:address', {
   name: 'App.search',
   action() {
     BlazeLayout.render('App_body', { main: 'Search_view' });
   },
 });
 
-FlowRouter.route('/s/:address', {
+
+FlowRouter.route('/s', {
   name: 'App.search',
   action() {
     BlazeLayout.render('App_body', { main: 'Search_view' });

@@ -10,24 +10,30 @@ import mapsObj from '../../libs/maps';
 // });
 
 Template.Search.onRendered(function renderedFunc() {
-  this.autorun(function autofunc() {
+  this.autorun(() => {
     if (mapsObj.checkLoaded()) {
       this.search = new window.google.maps.places.Autocomplete(document.getElementById('autocomplete'));
       this.search.addListener('place_changed', () => {
         const place = this.search.getPlace();
-        let addressParam;
-        if (!place.address_components) {
-          addressParam = place.name;
+        const params = {};
+        const query = {};
+
+        if (!place.address_components && place.name) {
+          params.address = place.name;
         } else {
-          addressParam = place.address_components.map(
+          const addressParam = place.address_components.map(
             ({ long_name }) => long_name.split(' ').join('-'),
           ).join('--');
+
+          params.address = addressParam;
         }
 
-        if (addressParam) {
-          FlowRouter.go('/s/'+addressParam);
+        if (place.place_id) {
+          query.place_id = place.place_id;
         }
-      })
+
+        FlowRouter.go('/s/:address', params, query);
+      });
     }
-  }.bind(this));
+  });
 });

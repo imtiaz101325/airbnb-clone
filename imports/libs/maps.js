@@ -6,7 +6,7 @@ export default {
   checkLoaded() {
     return this.loadStatus.get();
   },
-  load() {
+  loadMap() {
     window.initMap = function mapInit() {
       this.loadStatus.set(true);
     }.bind(this);

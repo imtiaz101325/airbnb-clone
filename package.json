@@ -12,8 +12,10 @@
     "bootstrap-datepicker": "^1.6.4",
     "bootstrap-sass": "^3.3.7",
     "bootswatch": "^3.3.7",
-    "gmaps": "^0.4.24",
-    "meteor-node-stubs": "~0.2.4"
+    "faker": "^4.1.0",
+    "font-awesome": "^4.7.0",
+    "meteor-node-stubs": "~0.2.4",
+    "simpl-schema": "^0.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.5",

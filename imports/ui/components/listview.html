@@ -1,11 +1,26 @@
 <template name="Listview">
-  <div class="jumbotron margin-top-2em">
-    <h1>No Results</h1>
-    <h3>Try adjusting search. Here are some ideas:</h3>
-    <ul>
-      <li><p>Change your filters or dates</p></li>
-      <li><p>Zoom out on the map</p></li>
-      <li><p>Search for a specific city, address, or landmark</p></li>
-    </ul>
-  </div>
+  {{#each item in itemList }}
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3>Thumbnail label</h3>
+            <p>...</p>
+            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <div class="jumbotron margin-top-2em">
+      <h1>No Results</h1>
+      <h3>Try adjusting search. Here are some ideas:</h3>
+      <ul>
+        <li><p>Change your filters or dates</p></li>
+        <li><p>Zoom out on the map</p></li>
+        <li><p>Search for a specific city, address, or landmark</p></li>
+      </ul>
+    </div>
+  {{/each}}
 </template>
